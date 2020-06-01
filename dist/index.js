@@ -507,6 +507,7 @@ const { inspect } = __webpack_require__(669);
 const core = __webpack_require__(470);
 const github = __webpack_require__(469);
 
+
 async function run() {
   try {
     const inputs = {
@@ -538,7 +539,7 @@ async function run() {
           ? comment.user.login === inputs.commentAuthor
           : true) &&
         (inputs.bodyIncludes
-          ? comment.body.includes(inputs.bodyIncludes)
+          ? RegExp(inputs.bodyIncludes).test(comment.body)
           : true)
       );
     });
