@@ -33,7 +33,7 @@ async function run() {
           ? comment.user.login === inputs.commentAuthor
           : true) &&
         (inputs.bodyIncludes
-          ? comment.body.includes(inputs.bodyIncludes)
+          ? RegExp(inputs.bodyIncludes).test(comment.body)
           : true)
       );
     });
