@@ -41,8 +41,10 @@ async function run() {
 
     if (comment) {
       core.setOutput("comment-id", comment.id.toString());
+      core.setOutput("comment-body", comment.body.toString());
     } else {
       core.setOutput("comment-id", "");
+      core.setOutput("comment-body", "");
     }
   } catch (error) {
     core.debug(inspect(error));

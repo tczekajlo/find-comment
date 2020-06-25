@@ -15,6 +15,8 @@ inputs:
 outputs:
   comment-id:
     description: 'The id of the first matching comment found.'
+  comment-body:
+    description: 'The body of the first matching comment found.'
 runs:
   using: 'node12'
   main: 'dist/index.js'
